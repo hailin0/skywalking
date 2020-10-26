@@ -46,6 +46,7 @@
   * [Apache Avro](http://avro.apache.org) 1.7.0 - 1.8.x
   * [Finagle](https://github.com/twitter/finagle) 6.25.0 -> 20.1.0 
   * [Brpc-Java](https://github.com/baidu/brpc-java) 2.3.7 -> 2.5.3
+  * [Thrift](https://github.com/apache/thrift/tree/master/lib/java) 0.10.0 -> 0.12.0
 * MQ
   * [RocketMQ](https://github.com/apache/rocketmq) 4.x
   * [Kafka](http://kafka.apache.org) 0.11.0.0 -> 1.0
@@ -58,7 +59,7 @@
     * [Jedis](https://github.com/xetorthio/jedis) 2.x
     * [Redisson](https://github.com/redisson/redisson) Easy Java Redis client 3.5.2+
     * [Lettuce](https://github.com/lettuce-io/lettuce-core) 5.x
-  * [MongoDB Java Driver](https://github.com/mongodb/mongo-java-driver) 2.13-2.14, 3.4.0-3.11.1
+  * [MongoDB Java Driver](https://github.com/mongodb/mongo-java-driver) 2.13-2.14, 3.4.0-3.12.7, 4.0.0-4.1.0
   * Memcached Client
     * [Spymemcached](https://github.com/couchbase/spymemcached) 2.x
     * [Xmemcached](https://github.com/killme2008/xmemcached) 2.x
@@ -87,6 +88,7 @@
   * [Apache ShardingSphere-Elasticjob](https://github.com/apache/shardingsphere-elasticjob) 3.0.0-alpha
   * [Spring @Scheduled](https://github.com/spring-projects/spring-framework) 3.1+
   * [Quartz Scheduler](https://github.com/quartz-scheduler/quartz) 2.x (Optional²)
+  * [XXL Job](https://github.com/xuxueli/xxl-job) 2.x
 * OpenTracing community supported
 * [Canal: Alibaba mysql database binlog incremental subscription & consumer components](https://github.com/alibaba/canal) 1.0.25 -> 1.1.2
 * JSON
