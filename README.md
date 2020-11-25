@@ -29,7 +29,7 @@ The core features are following.
 - Alarm
 - Browser performance monitoring
 
-<img src="http://skywalking.apache.org/assets/frame-v8.jpg?u=20200423"/>
+<img src="http://skywalking.apache.org/assets/frame-v8.jpg?u=20201105"/>
 
 SkyWalking supports to collect telemetry (traces and metrics) data from multiple sources
 and multiple formats,
@@ -38,19 +38,17 @@ including
 1. Go agent.
 1. LUA agent especially for Nginx, OpenResty.
 1. Service Mesh Observability. Support Mixer telemetry. Recommend to use Envoy Access Log Service (ALS) for better performance, first introduced at [KubeCon 2019](https://www.youtube.com/watch?v=tERm39ju9ew).
-1. Metrics system, including Prometheus, Spring Sleuth(Micrometer).
+1. Metrics system, including Prometheus, OpenTelemetry, Spring Sleuth(Micrometer).
+1. Browser application performance, including metrics and error logs.
 1. Zipkin v1/v2 and Jaeger gRPC format with limited topology and metrics analysis.(Experimental).
 
 SkyWalking OAP is using the STAM(Streaming Topology Analysis Method) to analysis topology in the tracing based agent scenario 
 for better performance. Read [the paper of STAM](https://wu-sheng.github.io/STAM/) for more details.
 
-# Document
-Version Series | Version | 
------------ | ---------- |
-8.x| [8.x dev](docs/README.md)|
-| | [8.1.0](https://github.com/apache/skywalking/blob/v8.1.0/docs/README.md) |
-| | [8.0.1](https://github.com/apache/skywalking/blob/v8.0.1/docs/README.md) |
-
+# Documentation
+- [Official documentation](https://skywalking.apache.org/docs/)
+- [The paper of STAM](https://wu-sheng.github.io/STAM/), Streaming Topology Analysis Method.
+- [Blog](https://skywalking.apache.org/blog/2020-04-13-apache-skywalking-profiling/) about profiling the code performance in production.
 
 NOTICE, SkyWalking 8.0+ uses [v3 protocols](docs/en/protocols/README.md). They are incompatible with previous releases.
 
