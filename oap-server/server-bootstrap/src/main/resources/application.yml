@@ -192,6 +192,7 @@ storage:
     database: ${SW_STORAGE_INFLUXDB_DATABASE:skywalking}
     actions: ${SW_STORAGE_INFLUXDB_ACTIONS:1000} # the number of actions to collect
     duration: ${SW_STORAGE_INFLUXDB_DURATION:1000} # the time to wait at most (milliseconds)
+    batchEnabled: ${SW_STORAGE_INFLUXDB_BATCH_ENABLED:true}
     fetchTaskLogMaxSize: ${SW_STORAGE_INFLUXDB_FETCH_TASK_LOG_MAX_SIZE:5000} # the max number of fetch task log in a request
 
 agent-analyzer:
@@ -205,7 +206,7 @@ agent-analyzer:
     # Exit spans with the component in the list would not generate the client-side instance relation metrics.
     noUpstreamRealAddressAgents: ${SW_NO_UPSTREAM_REAL_ADDRESS:6000,9000}
     slowTraceSegmentThreshold: ${SW_SLOW_TRACE_SEGMENT_THRESHOLD:-1} # Setting this threshold about the latency would make the slow trace segments sampled if they cost more time, even the sampling mechanism activated. The default value is `-1`, which means would not sample slow traces. Unit, millisecond.
-    meterAnalyzerActiveFiles: ${SW_METER_ANALYZER_ACTIVE_FILES:} # Which files could be meter analyzed, files split by ","
+    meterAnalyzerActiveFiles: ${SW_METER_ANALYZER_ACTIVE_FILES:spring-sleuth.yaml} # Which files could be meter analyzed, files split by ","
 
 receiver-sharing-server:
   selector: ${SW_RECEIVER_SHARING_SERVER:default}
@@ -254,10 +255,6 @@ service-mesh:
   selector: ${SW_SERVICE_MESH:default}
   default:
 
-istio-telemetry:
-  selector: ${SW_ISTIO_TELEMETRY:default}
-  default:
-
 envoy-metric:
   selector: ${SW_ENVOY_METRIC:default}
   default:
@@ -270,9 +267,9 @@ envoy-metric:
     k8sServiceNameRule: ${K8S_SERVICE_NAME_RULE:"${service.metadata.name}"}
 
 prometheus-fetcher:
-  selector: ${SW_PROMETHEUS_FETCHER:default}
+  selector: ${SW_PROMETHEUS_FETCHER:-}
   default:
-    active: ${SW_PROMETHEUS_FETCHER_ACTIVE:false}
+    enabledRules: ${SW_PROMETHEUS_FETCHER_ENABLED_RULES:"self"}
 
 kafka-fetcher:
   selector: ${SW_KAFKA_FETCHER:-}
@@ -290,11 +287,11 @@ receiver-meter:
   selector: ${SW_RECEIVER_METER:default}
   default:
 
-receiver-oc:
-  selector: ${SW_OC_RECEIVER:-}
+receiver-otel:
+  selector: ${SW_OTEL_RECEIVER:-}
   default:
-    gRPCHost: ${SW_OC_RECEIVER_GRPC_HOST:0.0.0.0}
-    gRPCPort: ${SW_OC_RECEIVER_GRPC_PORT:55678}
+    enabledHandlers: ${SW_OTEL_RECEIVER_ENABLED_HANDLERS:"oc"}
+    enabledOcRules: ${SW_OTEL_RECEIVER_ENABLED_OC_RULES:"istio-controlplane"}
 
 receiver_zipkin:
   selector: ${SW_RECEIVER_ZIPKIN:-}
