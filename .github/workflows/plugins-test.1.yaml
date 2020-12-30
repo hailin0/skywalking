@@ -56,6 +56,9 @@ jobs:
           - kafka-scenario
           - kotlin-coroutine-scenario
           - lettuce-scenario
+          - logger-logback-scenario
+          - logger-log4j-scenario
+          - logger-log4j2-scenario
           - mongodb-3.x-scenario
           - mongodb-4.x-scenario
           - netty-socketio-scenario
@@ -76,6 +79,8 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 8
+      - name: Add checkstyle-plugin
+        run: sed -i '/<\/sourceDirectories>/i <sourceDirectory>scenarios\/'"${{ matrix.case }}"'<\/sourceDirectory>' test/plugin/pom.xml
       - name: Build SkyWalking Agent
         run: ./mvnw --batch-mode clean package -DskipTests -Pagent
       - name: Build Docker image
