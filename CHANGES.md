@@ -40,6 +40,11 @@ Release Notes.
 * Add JavaScript component ID.
 * Fix CVE of UninstrumentedGateways in Dynamic Configuration activation.
 * Improve query performance in storage-influxdb-plugin.
+* Fix the uuid field in GRPCConfigWatcherRegister is not updated.
+* Support Envoy {AccessLog,Metrics}Service API V3.
+* Adopt the [MAL](docs/en/concepts-and-designs/mal.md) in Envoy metrics service analyzer.
+* Fix the priority setting doesn't work of the ALS analyzers.
+* Fix bug that `endpoint-name-grouping.yml` is not customizable in Dockerized case.
 
 #### UI
 * Fix un-removed tags in trace query.
@@ -58,6 +63,9 @@ Release Notes.
 * Fix topology render all services nodes when groups changed.
 * Fix rk-footer utc input's width.
 * Update rk-icon and rewrite rk-header svg tags with rk-icon.
+* Add icon for http type.
+* Fix rk-footer utc without local storage.
+* Sort group names in the topology.
 
 #### Documentation
 * Update the documents of backend fetcher and self observability about the latest configurations.
